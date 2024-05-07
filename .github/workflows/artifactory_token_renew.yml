@@ -26,13 +26,6 @@ jobs:
       - name: print the artifactory token 
         run: |
           echo "${{ secrets.ARTIFACTORY_PASSWORD}}" 
-  call-artifactory-token-rotator:
-    uses: development-pipeline/es-jfrog-workflows-library/.github/workflows/rotate-jfrog-token-gh-secret.yml@v1
-    secrets:
-##      GH-PAT: ${{ secrets.REPO_GH_PAT }}
-      JFROG_ACCESS_TOKEN: ${{ secrets.ARTIFACTORY_PASSWORD }}
-    with:
-      SECRET_KEY_JF_ACCESS_TOKEN: ARTIFACTORY_PASSWORD
-      EXPIRY_IN_SECONDS: '3600' # Set expiry to 35 days
+
 
  
